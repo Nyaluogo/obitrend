@@ -15,7 +15,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'gender',
+        'first_name',
+        'other_names',
+        'access_level',
+        'slug',
+        'avatar',
+        'account_status',
+        'phone_number',
+
     ];
 
     /**
@@ -26,4 +37,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /* relationships*/
+
+      public function profile()
+    {
+      return $this->hasOne('Black_Magik\Profile');
+    }
+
+      public function announcement()
+    {
+        return $this->hasMany('Black_Magik\Announcement');
+    }
 }
