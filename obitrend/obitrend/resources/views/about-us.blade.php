@@ -1,42 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app1')
 
-<!-- Mirrored from anycsm.club/products/html/bizfry-preview/about_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Sep 2017 12:13:41 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="Bizfry - Creative Multipurpose HTML Template">
-        <meta name="author" content="anycsm">
-        <link rel="icon" href="img/favicon.ico">
-        <title>Bizfry - Creative Multipurpose HTML Template</title>
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="css/fakeLoader.css" rel="stylesheet">
-        <link href="css/linecons.css" rel="stylesheet">
-        <link href="css/mmenu.css" rel="stylesheet">
-        <link href="css/owl.carousel.css" rel="stylesheet">
-        <link href="css/owl.carousel.css" rel="stylesheet">
-        <link href="css/owl.theme.css" rel="stylesheet">
-        <link href="css/component02.css" rel="stylesheet">
-        <link href="css/theme.css" rel="stylesheet">
-        <link href="css/theme-content-color/blue.css" rel="stylesheet">
-        <link href="css/spacing.css" rel="stylesheet">
-        <!-- Google Font this template -->
-        <link href='https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700%7CVarela+Round' rel='stylesheet' type='text/css'>
-        <!-- Just for debugging purposes. Don't actually copy this line! -->
-        <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
+@section('content')
         <div class="fakeloader"></div>
         <!-- start wrapper -->
         <div class="wrapper">
@@ -553,41 +517,4 @@
             </div>
             <!-- end modal -->
         </div>
-        <!-- end wrapper -->
-        <!-- Bootstrap core JavaScript
-            ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="../../../../ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.12.4.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/modernizr.custom.js"></script>
-        <!-- loader effect -->
-        <script src="js/fakeLoader.min.js"></script>
-        <!-- overlay effect -->
-        <script src="js/classie.js"></script>
-        <!-- off-canvas menu -->
-        <script type="text/javascript" src="js/jquery.mmenu.min.js"></script>
-        <!-- isotope filter -->
-        <script src="js/jquery.isotope.min.js"></script>
-        <!-- jQuery parallax -->
-        <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-        <!-- counter -->
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/toucheffects.js"></script>
-        <!-- owl carousel -->
-        <script src="js/owl.carousel.js"></script>
-        <!-- smooth scroll -->
-        <script src="js/jquery.localScroll.min.js"></script>
-        <script src="js/smooth-scroll.min.js"></script>
-        <!-- contact form -->
-        <script src="js/jqBootstrapValidation.js"></script>
-        <script src="js/contact_me.js"></script>
-        <!-- snow js -->
-        <script src="js/snow.js"></script>
-        <!-- custom js -->
-        <script src="js/custom.js"></script>
-    </body>
-
-<!-- Mirrored from anycsm.club/products/html/bizfry-preview/about_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Sep 2017 12:13:43 GMT -->
-</html>
+@endsection

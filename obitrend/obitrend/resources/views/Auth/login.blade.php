@@ -74,7 +74,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <input class="form-control form-control-solid placeholder-no-fix" type="email" autocomplete="off" value="{{ old('email') }}"  name="email"" /> </div>
                 <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">Password</label>
-                    <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="password"  placeholder="Password" name="password" /> </div>
                 <div class="form-actions">
                     <button type="submit" class="btn green uppercase">Login</button>
                     <label class="rememberme check mt-checkbox mt-checkbox-outline">
@@ -404,9 +404,9 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="copyright"> 2014 © Metronic. Admin Dashboard Template. </div>
         <!--[if lt IE 9]>
-<script src="../assets/global/plugins/respond.min.js"></script>
-<script src="../assets/global/plugins/excanvas.min.js"></script>
-<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+<script src="{{asset('layout_assets/global/plugins/respond.min.js')}}"></script>
+<script src="{{asset('layout_assets/global/plugins/excanvas.min.js')}}"></script>
+<script src="{{asset('layout_assets/global/plugins/ie8.fix.min.js')}}"></script>
 <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
         <script src="{{asset('layout_assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>

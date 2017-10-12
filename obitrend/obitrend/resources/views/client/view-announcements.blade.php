@@ -1287,7 +1287,7 @@
                                 </div>
                             </div>
                             <!-- action-->
-                            <!-- <div class="actions pull-right">
+                            <div class="actions pull-right">
                                 <a href="javascript:;" class="btn blue btn-sm">
                                     <i class="fa fa-pencil"></i> Edit </a>
                                 <div class="btn-group">
@@ -1314,7 +1314,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- action-->
                         </div>
                     </div>
