@@ -48,10 +48,13 @@
 
                                   <ul>
                                       <li class="last">
-                                          <a href="#">About us</a>
-                                          
-                                      </li>
+                                           <a href="{{ route('about') }}">About us</a>
 
+                                      </li>
+                                      <li class="last">
+                                          <a href="#">Pricing</a>
+
+                                      </li>
 
 
                                         <li class="last"><a href="#" data-toggle="modal" data-target="#myModal">Contact Us</a></li>
@@ -86,11 +89,11 @@
                         <div class="container">
                             <div class="h-caption">
                                 <h1 class="h-title">
-                                    Bizfry helps businesses like yours <br class="hidden-xs"/>
-                                    to achieve long-term success.
+                                    Have a death or missing persons' announcement? <br class="hidden-xs"/>
+                                    use us to reach out to the world.
                                 </h1>
                                 <p class="h-subtitle hidden-xs">
-                                    Future-focussed business strategy and financial management by Bizfry
+                                    Register with us and let the world know
                                 </p>
                                 <a class="btn btn-primary inner-link hidden-xs" href="{{ route('register') }}">Register</a>
                                 <a class="btn btn-transparent hidden-xs" href="{{ route('login') }}">Login</a>
@@ -105,12 +108,12 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 mb-xs-20">
                                 <h1 class="fs-48 fw-800">
                                     WELCOME TO <br/>
-                                    BE BIZFRY AGENCY
+                                    OBITREND INTERNATIONAL
                                 </h1>
-                                <h2 class="fw-300 mb-20 theme-color">Perfect advertising solution for your brand</h2>
-                                <p class="mb-30">We’re Bizfry, a creative agency located in the heart of New York city. We pride ourselves on developing unique and professional solutions with a wide variety of mediums. Take a look around and don’t be shy.</p>
+                                <h2 class="fw-300 mb-20 theme-color">Perfect advertising solution for your announcements</h2>
+                                <p class="mb-30">We’re Obitrend, a advertising company located in the heart of Nairobi,Kenya. We pride ourselves on advertising announcements but not limited to death,missing persons and public notices  Take a look around and don’t be shy.</p>
                                 <p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum typi non.</p>
-                                <a class="btn btn-default mt-20" href="about.html">read more</a>
+                                <a class="btn btn-default mt-20" href="{{ route('about') }}">read more</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <!-- <img class="mockup" src="img/about.jpg" alt="" /> -->
@@ -234,39 +237,39 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 services mb-40 mb-xs-30">
-                                <i class="icon icon-camera"></i>
+                                  <i class="icon fa fa-feed"></i>
                                 <div class="desk">
-                                    <h2>Expert, Modular Design</h2>
+                                    <h2>Public Notices</h2>
                                     <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 services mb-40 mb-xs-30">
-                                <i class="icon icon-briefcase"></i>
+                                    <i class="icon fa fa-user"></i>
                                 <div class="desk">
-                                    <h2>Trusted, Elite Author</h2>
+                                    <h2>Missing persons</h2>
                                     <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 services mb-40 mb-xs-30">
-                                <i class="icon icon-trophy"></i>
+                                <i class="icon icon-layers"></i>
                                 <div class="desk">
-                                    <h2>Ultimate Flexibility</h2>
+                                    <h2>Death announcements</h2>
                                     <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 services mb-xs-30">
-                                <i class="icon icon-hourglass"></i>
+                                  <i class="icon icon-layers"></i>
                                 <div class="desk">
-                                    <h2>Dedicated Support</h2>
+                                    <h2>Anniversaries</h2>
                                     <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 services mb-xs-30">
                                 <i class="icon icon-layers"></i>
                                 <div class="desk">
-                                    <h2>Endless Layouts</h2>
+                                    <h2>Advertisements</h2>
                                     <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                                 </div>
                             </div>
@@ -323,15 +326,15 @@
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                 <h5 class="widget-title">Keep in Touch</h5>
                                 <ul class="footer-contact">
-                                    <li><i class="fa fa-map-marker"></i><span>Adress: 1234 The Street Name, <br> The City Name, The Location</span></li>
-                                    <li><i class="fa fa-phone"></i><span>Phone: +1 (234) 567-89-10</span></li>
-                                    <li><i class="fa fa-envelope"></i><span>Email: <a href="mailto:#">office@yourdomain.com</a></span></li>
+                                    <li><i class="fa fa-map-marker"></i><span>Adress: P.O BOX 21870-00400<br> Nairobi , Kenya</span></li>
+                                    <li><i class="fa fa-phone"></i><span>Phone: +254 743-400-404</span></li>
+                                    <li><i class="fa fa-envelope"></i><span>Email: <a href="mailto:#">internationalobitrend@gmail.com</a></span></li>
                                 </ul>
                                 <ul class="footer-social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
                                 </ul>
                             </div>
                         </div>

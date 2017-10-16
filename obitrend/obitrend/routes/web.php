@@ -14,9 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about', function () {
-    return view('about-us');
-});
+// Route::get('/about', function () {
+//     return view('about-us');
+// });
+
+// Route::get('/about ',[
+// 'uses' => 'LandingController@index',
+// 'as' => 'about.us'
+// ]);
+ Route::get('/about', 'LandingController@index')->name('about');
+  Route::get('/pricing', 'LandingController@pricing')->name('pricing');
 
 
 Auth::routes();
