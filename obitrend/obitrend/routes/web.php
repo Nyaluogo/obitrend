@@ -24,6 +24,10 @@ Route::get('/', function () {
 // ]);
  Route::get('/about', 'LandingController@index')->name('about');
   Route::get('/pricing', 'LandingController@pricing')->name('pricing');
+  Route::post('/profile/edit/profile',[
+ 'uses' => 'LandingController@register',
+ 'as' => 'regster'
+ ]);
 
 
 Auth::routes();
@@ -53,6 +57,10 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AdminController@index',
     'as' => 'admin.index'
     ]);
+    Route::get('/admin/view', [
+    'uses' => 'AdminController@get_all_requests',
+    'as' => 'admin.view.requests'
+    ]);
   // fetches the make request view
     Route::get('/announcements/make', [
     'uses' => 'AnnouncementController@index',
@@ -63,11 +71,25 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AnnouncementController@create',
     'as' => 'create.announcement'
     ]);
+    //updates announcements
+    Route::post('/announcements/update/{id}', [
+    'uses' => 'AnnouncementController@update',
+    'as' => 'update.announcement'
+    ]);
     // fetches the request  view
     Route::get('/announcements/view', [
     'uses' => 'AnnouncementController@announcements',
     'as' => 'client.view'
     ]);
+    Route::get('/announcements/show/{id}', [
+    'uses' => 'AnnouncementController@announcements',
+    'as' => 'client.view'
+    ]);
+    Route::get('/admin/request/{id}', [
+    'uses' => 'AdminController@request',
+    'as' => 'admin.get.requests'
+    ]);
+
 
 
 

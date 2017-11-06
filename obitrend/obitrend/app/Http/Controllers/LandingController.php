@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use  Auth;
 use App\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -29,5 +28,6 @@ class LandingController extends Controller
   {
       return view('pricing');
   }
+  
 
 }

@@ -25,19 +25,34 @@
                             </div>
                         </div>
 
-                                   <div class="form-group{{ $errors->has('other_names') ? ' has-error' : '' }}">
-                            <label for="other_names" class="col-md-4 control-label">Last Name</label>
 
-                            <div class="col-md-6">
-                                <input id="other_names" type="text" class="form-control" name="other_names" value="{{ old('other_names') }}" required autofocus>
+                        <div class="form-group{{ $errors->has('other_names') ? ' has-error' : '' }}">
+                 <label for="other_names" class="col-md-4 control-label">Last Name</label>
 
-                                @if ($errors->has('other_names'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('other_names') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                 <div class="col-md-6">
+                     <input id="other_names" type="text" class="form-control" name="other_names" value="{{ old('other_names') }}" required autofocus>
+
+                     @if ($errors->has('other_names'))
+                         <span class="help-block">
+                             <strong>{{ $errors->first('other_names') }}</strong>
+                         </span>
+                     @endif
+                 </div>
+             </div>
+
+                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                              <label for="other_names" class="col-md-4 control-label">Phone number</label>
+
+                              <div class="col-md-6">
+                                  <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
+
+                                  @if ($errors->has('phone'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('phone') }}</strong>
+                                      </span>
+                                  @endif
+                              </div>
+                          </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        
+
         'email',
         'password',
         'gender',
@@ -42,11 +42,11 @@ class User extends Authenticatable
 
       public function profile()
     {
-      return $this->hasOne('Black_Magik\Profile');
+      return $this->hasOne(Profile::class,'profiles');
     }
 
       public function announcement()
     {
-        return $this->hasMany('Black_Magik\Announcement');
+        return $this->hasMany(Announcement::class,'announcements');
     }
 }

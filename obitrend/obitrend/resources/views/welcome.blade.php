@@ -52,7 +52,7 @@
 
                                       </li>
                                       <li class="last">
-                                          <a href="#">Pricing</a>
+                                          <a href="{{ route('pricing') }}">Pricing</a>
 
                                       </li>
 
@@ -80,7 +80,7 @@
                                 <p class="h-subtitle hidden-xs">
                                     Register now
                                 </p>
-                                <a class="btn btn-primary inner-link hidden-xs" href="{{ route('register') }}">Register</a>
+                                <a class="btn btn-primary inner-link hidden-xs" href="{{ route('login') }}">Register</a>
                                 <a class="btn btn-transparent hidden-xs" href="{{ route('login') }}">Login</a>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                                 <p class="h-subtitle hidden-xs">
                                     Register with us and let the world know
                                 </p>
-                                <a class="btn btn-primary inner-link hidden-xs" href="{{ route('register') }}">Register</a>
+                                <a class="btn btn-primary inner-link hidden-xs" href="{{ route('login') }}">Register</a>
                                 <a class="btn btn-transparent hidden-xs" href="{{ route('login') }}">Login</a>
                             </div>
                         </div>

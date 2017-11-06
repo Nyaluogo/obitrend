@@ -64,6 +64,9 @@
                 <!-- END RESPONSIVE MENU TOGGLER -->
                 <!-- BEGIN PAGE ACTIONS -->
                 <!-- DOC: Remove "hide" class to enable the page header actions -->
+                @if(Auth::check())
+                    @if(Auth::user()->access_level == 0)
+
                 <div class="page-actions">
                     <div class="btn-group">
                       <a  href="{{ route('client.index') }}" class="btn blue-chambray btn-outline btn-sm">
@@ -73,12 +76,14 @@
 
                     </div>
                 </div>
+                @endif
+            @endif
                 <!-- END PAGE ACTIONS -->
                 <!-- BEGIN PAGE TOP -->
                 <div class="page-top">
                     <!-- BEGIN HEADER SEARCH BOX -->
                     <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-                    <form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">
+                    <!-- <form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search..." name="query">
                             <span class="input-group-btn">
@@ -87,9 +92,13 @@
                                 </a>
                             </span>
                         </div>
-                    </form>
+                    </form> -->
                     <!-- END HEADER SEARCH BOX -->
                     <!-- BEGIN TOP NAVIGATION MENU -->
+                    @if(Auth::check())
+                        @if(Auth::user()->access_level == 1)
+
+
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
                             <!-- BEGIN NOTIFICATION DROPDOWN -->
@@ -99,101 +108,71 @@
                             <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <i class="icon-bell"></i>
-                                    <span class="badge badge-default"> 7 </span>
+                                    <span class="badge badge-default"><?php echo count($requests); ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="external">
                                         <h3>
-                                            <span class="bold">12 pending</span> notifications</h3>
-                                        <a href="page_user_profile_1.html">view all</a>
+                                            <span class="bold"><?php echo count($requests); ?> pending</span> notifications</h3>
+                                        <a href="{{ route('admin.view.requests') }}">view all</a>
                                     </li>
                                     <li>
                                         <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
                                             <li>
                                                 <a href="javascript:;">
-                                                    <span class="time">just now</span>
+
                                                     <span class="details">
-                                                        <span class="label label-sm label-icon label-success">
-                                                            <i class="fa fa-plus"></i>
-                                                        </span> New user registered. </span>
+                                                        <!-- <span class="label label-sm label-icon label-success">
+
+
+                                                        </span> -->
+                                                      </span>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">3 mins</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Server #12 overloaded. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">10 mins</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-warning">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </span> Server #2 not responding. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">14 hrs</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-info">
-                                                            <i class="fa fa-bullhorn"></i>
-                                                        </span> Application error. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">2 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Database overloaded 68%. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">3 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> A user IP blocked. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">4 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-warning">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </span> Storage Server #4 not responding dfdfdfd. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">5 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-info">
-                                                            <i class="fa fa-bullhorn"></i>
-                                                        </span> System Error. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">9 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Storage server failed. </span>
-                                                </a>
-                                            </li>
+
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
+                            @else
+
+                                                <div class="top-menu">
+                                                    <ul class="nav navbar-nav pull-right">
+                                                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                                                        <!-- DOC: Apply "dropdown-dark" class below "dropdown-extended" to change the dropdown styte -->
+                                                        <!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                                                        <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                                                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                                <i class="icon-bell"></i>
+                                                                <span class="badge badge-default"><?php echo count($requests); ?></span>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="external">
+                                                                    <h3>
+                                                                        <span class="bold"><?php echo count($requests); ?> pending</span> notifications</h3>
+                                                                    <a href="#">view all</a>
+                                                                </li>
+                                                                <li>
+                                                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                                                        <li>
+                                                                            <a href="javascript:;">
+
+                                                                                <span class="details">
+                                                                                    <!-- <span class="label label-sm label-icon label-success">
+
+
+                                                                                    </span> -->
+                                                                                  </span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+  @endif
+                        @endif
                             <!-- END NOTIFICATION DROPDOWN -->
                             <!-- BEGIN USER LOGIN DROPDOWN -->
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->

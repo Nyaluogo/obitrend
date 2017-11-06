@@ -1218,10 +1218,13 @@
                             <div class="caption">
                                 <i class="fa fa-gift"></i>announcements </div>
                             <ul class="nav nav-tabs">
+                              <li>
+                                  <a href="#portlet_tab4" data-toggle="tab"> Anniversaries </a>
+                              </li>
                                 <li>
                                     <a href="#portlet_tab3" data-toggle="tab"> Public Notice</a>
                                 </li>
-                                <li>
+                                 <li>
                                     <a href="#portlet_tab2" data-toggle="tab"> Missing persons </a>
                                 </li>
                                 <li class="active">
@@ -1233,61 +1236,68 @@
                             <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="portlet_tab1">
+                                  @foreach ($all['announcements'] as $row)
+                                  <div class ="col-lg-2 col-md-2 col-sm-2">
+                                    <img src="{{asset('layout_assets/img/clients/logo1.png')}}"  >
+                                       </div>
+
+                                    {{$row->title}}<br/>{{$row->description}}
                                     <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
                                         zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
                                         laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
-                                        <!-- action-->
-                                        <!-- <div class="actions pull-right">
+                                        <div class="actions pull-right">
                                             <a href="javascript:;" class="btn blue btn-sm">
-                                                <i class="fa fa-pencil"></i> Edit </a>
+                                                <i class="fa fa-pencil"></i> Tribute </a>
                                             <div class="btn-group">
                                                 <a class="btn btn-sm green" href="javascript:;" data-toggle="dropdown">
-                                                    <i class="fa fa-user"></i> User
+                                                    <i class="fa fa-user"></i> Share
                                                     <i class="fa fa-angle-down"></i>
                                                 </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> Edit </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> Delete </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-ban"></i> Ban </a>
-                                                    </li>
-                                                    <li class="divider"> </li>
-                                                    <li>
-                                                        <a href="javascript:;"> Make admin </a>
-                                                    </li>
-                                                </ul>
+
                                             </div>
-                                        </div> -->
-                                        <!-- action-->
-                                        <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                            zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                            laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
-                                            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                                zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                                laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
-                                                <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                                    zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                                    laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                        </div><br/>
+                                        <hr/>
+                                    @endforeach
+
+
                                 </div>
                                 <div class="tab-pane" id="portlet_tab2">
-                                    <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. </p>
+                                  <div class ="col-lg-2 col-md-2 col-sm-2">
+                                    <img src="{{asset('layout_assets/img/clients/logo1.png')}}"  >
+                                       </div>
+                                   @foreach ($all['missing'] as $row)
+                                    {{$row->title}}<br/>{{$row->description}}
+                                    <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                                        zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
+                                        laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                    @endforeach
                                 </div>
                                 <div class="tab-pane" id="portlet_tab3">
-                                    <p> Ut wisi enim ad btn-smm veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+                                  <div class ="col-lg-2 col-md-2 col-sm-2">
+                                    <img src="{{asset('layout_assets/img/clients/logo1.png')}}"  >
+                                       </div>
+                                  @foreach ($all['public'] as $row)
+                                  {{$row->title}}<br/>{{$row->description}}
+                                    <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                                        zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
+                                        laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                    @endforeach
+                                </div>
+                                <div class="tab-pane" id="portlet_tab4">
+                                  <div class ="col-lg-2 col-md-2 col-sm-2">
+                                    <img src="{{asset('layout_assets/img/clients/logo1.png')}}"  >
+                                       </div>
+                                  @foreach ($all['anniversaries'] as $row)
+                                    {{$row->title}}<br/>{{$row->description}}
+                                    <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                                        zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
+                                        laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                    @endforeach
+
                                 </div>
                             </div>
                             <!-- action-->
-                            <div class="actions pull-right">
+                            <!-- <div class="actions pull-right">
                                 <a href="javascript:;" class="btn blue btn-sm">
                                     <i class="fa fa-pencil"></i> Edit </a>
                                 <div class="btn-group">
@@ -1314,7 +1324,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- action-->
                         </div>
                     </div>

@@ -17,7 +17,7 @@ var FormWizard = function () {
                 placeholder: "Select",
                 allowClear: true,
                 formatResult: format,
-                width: 'auto', 
+                width: 'auto',
                 formatSelection: format,
                 escapeMarkup: function (m) {
                     return m;
@@ -35,60 +35,66 @@ var FormWizard = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 rules: {
                     //account
-                    username: {
-                        minlength: 5,
-                        required: true
-                    },
-                    password: {
-                        minlength: 5,
-                        required: true
-                    },
-                    rpassword: {
-                        minlength: 5,
-                        required: true,
-                        equalTo: "#submit_form_password"
-                    },
+                    // username: {
+                    //     minlength: 5,
+                    //     required: true
+                    // },
+                    // password: {
+                    //     minlength: 5,
+                    //     required: true
+                    // },
+                    // rpassword: {
+                    //     minlength: 5,
+                    //     required: true,
+                    //     equalTo: "#submit_form_password"
+                    // },
                     //profile
                     fullname: {
                         required: true
                     },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    phone: {
-                        required: true
-                    },
-                    gender: {
-                        required: true
-                    },
-                    address: {
-                        required: true
-                    },
-                    city: {
-                        required: true
-                    },
-                    country: {
-                        required: true
-                    },
-                    //payment
-                    card_name: {
-                        required: true
-                    },
-                    card_number: {
-                        minlength: 16,
-                        maxlength: 16,
-                        required: true
-                    },
-                    card_cvc: {
-                        digits: true,
-                        required: true,
-                        minlength: 3,
-                        maxlength: 4
-                    },
-                    card_expiry_date: {
-                        required: true
-                    },
+                    // description: {
+                    //     required: true
+                    // },
+                    // email: {
+                    //     required: true,
+                    //     email: true
+                    // },
+                    // title: {
+                    //     required: true
+                    // },
+                    // phone: {
+                    //     required: true
+                    // },
+                    // gender: {
+                    //     required: true
+                    // },
+                    // address: {
+                    //     required: true
+                    // },
+                    // city: {
+                    //     required: true
+                    // },
+                    // country: {
+                    //     required: true
+                    // },
+                    // //payment
+                    // card_name: {
+                    //     required: true
+                    // },
+                    // card_number: {
+                    //     minlength: 16,
+                    //     maxlength: 16,
+                    //     required: true
+                    // },
+                    // card_cvc: {
+                    //     digits: true,
+                    //     required: true,
+                    //     minlength: 3,
+                    //     maxlength: 4
+                    // },
+                    // card_expiry_date: {
+                    //     required: true
+                    // },
                     'payment[]': {
                         required: true,
                         minlength: 1
@@ -112,7 +118,7 @@ var FormWizard = function () {
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit   
+                invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
                     App.scrollTo(error, -200);
@@ -163,7 +169,7 @@ var FormWizard = function () {
                         $(this).html(input.attr("data-title"));
                     } else if ($(this).attr("data-display") == 'payment[]') {
                         var payment = [];
-                        $('[name="payment[]"]:checked', form).each(function(){ 
+                        $('[name="payment[]"]:checked', form).each(function(){
                             payment.push($(this).attr('data-title'));
                         });
                         $(this).html(payment.join("<br>"));
@@ -206,13 +212,13 @@ var FormWizard = function () {
                 'previousSelector': '.button-previous',
                 onTabClick: function (tab, navigation, index, clickedIndex) {
                     return false;
-                    
+
                     success.hide();
                     error.hide();
                     if (form.valid() == false) {
                         return false;
                     }
-                    
+
                     handleTitle(tab, navigation, clickedIndex);
                 },
                 onNext: function (tab, navigation, index) {

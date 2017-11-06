@@ -7,7 +7,7 @@ use Storage;
 
 class Announcement extends Model
 {
-      public $with = ['user','tribute',];
+      //public $with = ['user','tribute',];
     protected $fillable = [
         'content',
         'user_id',
@@ -24,14 +24,14 @@ class Announcement extends Model
 
     public function user()
     {
-        return $this->belongsto('Black_Magik\User');
+        return $this->belongsto(User::class,'users');
     }
 
     public function tribute()
     {
-        return $this->hasMany('Black_Magik\Tribute');
+        return $this->hasMany(Tribute::class,'tributes');
     }
 
-   
+
 
 }
