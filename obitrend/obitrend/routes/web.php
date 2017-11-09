@@ -86,8 +86,13 @@ Route::group(['middleware' => 'auth'], function()
     'as' => 'client.view'
     ]);
     Route::get('/admin/request/{id}', [
-    'uses' => 'AdminController@request',
-    'as' => 'admin.get.requests'
+    'uses' => 'AdminController@get_request',
+    'as' => 'admin.get.request'
+    ]);
+    //block user
+    Route::get('/admin/block/{id}', [
+    'uses' => 'AdminController@block',
+    'as' => 'admin.block.user'
     ]);
 
 

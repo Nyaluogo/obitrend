@@ -48,23 +48,27 @@ class AnnouncementController extends Controller
       {
          $filename = $request->file->getClientOriginalName();
          $path = $request->file->storeAs('public/upload',$filename);
+         $file = $request->file_path->storeAs('public/upload',$filename);
       //creates announcements
            Announcement::create(array(
                'content'=>Input::get('content'),
                'user_id'=>Auth::user()->id,
                'type_of_announcement'=>Input::get('type_of_announcement'),
-               'image_thumb'=>'null',
+              // 'image_thumb'=>'null',
                'image_path'=>$path,
                'description'=>Input::get('description'),
-               'file_path'=>'null',
+               'file_path'=>$file,
                'location'=>Input::get('location'),
                'payment'=>Input::get('payment'),
                'is_featured'=>0,
+               'status'=>0,
                'title'=>Input::get('title')
 
              ));
              //if successful redirect to dashboard
          return redirect()->route('client.index');
+      }else{
+
       }
           return redirect()->route('create.announcement');
 
@@ -73,9 +77,7 @@ class AnnouncementController extends Controller
     public function update(request $request , $id)
     {
         $announcement = Announcement::find($id);
-        $announcement->content =$request->input('content');
         $announcement->description =$request->input('description');
-        $announcement->image_thumb =$request->input('content');
         $announcement->location =$request->input('location');
         //$announcement->content =$request->input('content');
         $announcement->save();

@@ -1648,12 +1648,12 @@
                                                         <p class="form-control-static" data-display="address"> </p>
                                                     </div>
                                                 </div> -->
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">City/Town:</label>
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="city"> </p>
-                                                    </div>
-                                                </div>
+                                                    </div> -->
+                                                
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Country:</label>
                                                     <div class="col-md-4">
@@ -1695,8 +1695,8 @@
                                                     <label class="control-label col-md-3">Payment Options:</label>
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="payment[]"> </p>
-                                                    </div>
-                                                </div> -->
+                                                    </div>-->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1846,7 +1846,7 @@
                                 <img class="media-object" src="../assets/layouts/layout/img/avatar9.jpg" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Deon Portalatin</h4>
-                                    <div class="media-heading-sub"> CFO, H&D LTD </div>
+                                    <div class="media-heading-sub"> CFO, HD LTD </div>
                                 </div>
                             </li>
                             <li class="media">

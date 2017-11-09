@@ -148,7 +148,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <option value="0">Female</option>
                     </select> </div>
 
-                <!-- <div class="form-group">
+                 <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">Country</label>
                     <select name="country" class="form-control">
                         <option value="">Country</option>
@@ -387,7 +387,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <option value="ZM">Zambia</option>
                         <option value="ZW">Zimbabwe</option>
                     </select>
-                </div> -->
+                </div> 
                 <p class="hint"> Enter your account details below: </p>
                 <!-- <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">Username</label>

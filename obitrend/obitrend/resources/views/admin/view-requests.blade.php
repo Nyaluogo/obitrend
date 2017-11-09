@@ -1288,20 +1288,21 @@
                                 <div class="tab-pane active" id="portlet_comments_1">
                                     <!-- BEGIN: Comments -->
                                     <div class="mt-comments">
+                                       @foreach ($requests as $row)
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar1.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
-                                                    <span class="mt-comment-date">26 Feb, 10:30AM</span>
+                                                    <span class="mt-comment-date">{{$row->created_at}} </span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                                                <div class="mt-comment-text">{{$row->title}} <br/>{{$row->description}}Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
                                                 <div class="mt-comment-details">
                                                     <span class="mt-comment-status mt-comment-status-pending">Pending</span>
                                                     <ul class="mt-comment-actions">
                                                         <li>
-                                                            <a href="#">View</a>
+                                                            <a href="{{ route('admin.get.request',$row->id) }}">View</a>
                                                         </li>
                                                         <li>
                                                             <a href="#">Approve</a>
@@ -1311,6 +1312,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                          @endforeach
                                         <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="../assets/pages/media/users/avatar6.jpg" /> </div>
@@ -1336,7 +1338,7 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                        <div class="mt-comment">
+                                        <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar8.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
@@ -1358,7 +1360,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="../assets/pages/media/users/avatar4.jpg" /> </div>
@@ -1390,17 +1392,25 @@
                                 <div class="tab-pane" id="portlet_comments_2">
                                     <!-- BEGIN: Comments -->
                                     <div class="mt-comments">
+                                      @foreach ($read as $row)
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar4.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
                                                     <span class="mt-comment-author">Michael Baker</span>
-                                                    <span class="mt-comment-date">26 Feb, 10:30AM</span>
+                                                    <span class="mt-comment-date">{{$row->created_at}} </span>
                                                 </div>
-                                                <div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
+                                                <div class="mt-comment-text">{{$row->title}} <br/>{{$row->description}} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
                                                 <div class="mt-comment-details">
-                                                    <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+                                                  @if($row->is_featured==1)
+                                                  <span class="mt-comment-status mt-comment-status-approved">Approved</span>
+
+                                                      @else
+                                                  <span class="mt-comment-status mt-comment-status-rejected">Rejected</span>
+                                                  @endif
+
+
                                                     <ul class="mt-comment-actions">
                                                         <li>
                                                             <a href="#">View</a>
@@ -1409,8 +1419,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="mt-comment">
+                                        </div>@endforeach
+                                        <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar6.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
@@ -1429,8 +1439,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="mt-comment">
+                                        </div> -->
+                                        <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar8.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
@@ -1449,8 +1459,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="mt-comment">
+                                        </div> -->
+                                        <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar6.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
@@ -1469,8 +1479,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="mt-comment">
+                                        </div> -->
+                                        <!-- <div class="mt-comment">
                                             <div class="mt-comment-img">
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar1.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
@@ -1489,7 +1499,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <!-- END: Comments -->
                                 </div>

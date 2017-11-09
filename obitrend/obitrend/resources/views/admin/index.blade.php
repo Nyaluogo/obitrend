@@ -1320,12 +1320,17 @@
                                         </td>
                                         <td class="center"> {{$row->created_at}} </td>
                                         <td>
-                                            <div class="btn-group">
-                                                <button hidden="{{$row->id}}"class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Block
+
+                                          <a  href="{{ route('admin.block.user',$row->id) }}" class="btn blue-chambray btn-outline btn-sm">
+                              <i class="fa fa-trash"></i>
+                              <span class="hidden-xs"> block </span>
+                          </a>
+                                            <!-- <div class="btn-group">
+                                                <button hidden="{{$row->id}}" action ="{{ route('admin.get.request',$row->id) }}" class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Block
 
                                                 </button>
 
-                                            </div>
+                                            </div> -->
                                         </td>
                                     </tr>@endforeach
                                     <!-- <tr class="odd gradeX">

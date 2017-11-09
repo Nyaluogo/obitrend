@@ -9,7 +9,7 @@ class Announcement extends Model
 {
       //public $with = ['user','tribute',];
     protected $fillable = [
-        'content',
+
         'user_id',
         'type_of_announcement',
         'image_thumb',
@@ -18,6 +18,8 @@ class Announcement extends Model
         'location',
         'file_path',
         'payment',
+        'status',
+        'country',
         'is_featured',
         'title'
         ];

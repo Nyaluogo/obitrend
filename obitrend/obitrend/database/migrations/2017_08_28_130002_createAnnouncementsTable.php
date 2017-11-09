@@ -23,8 +23,10 @@ class CreateAnnouncementsTable extends Migration
             $table->string('image_thumb')->nullable();
             $table->string('file_path')->nullable();
             $table->string('payment')->nullable();
+            $table->string('country')->nullable();
             $table->integer('is_featured')->nullable();
             $table->string('title')->nullable();
+            $table->integer('status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
