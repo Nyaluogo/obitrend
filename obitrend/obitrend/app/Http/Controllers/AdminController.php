@@ -7,6 +7,7 @@ use Session;
 use Auth;
 use App\User;
 use App\Announcement;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -30,6 +31,7 @@ class AdminController extends Controller
     {
       //fetches all users
         $users = User::all();
+        // $products = Product::with('skus')->get();
         $requests = Announcement::all();
 
         return view('admin.index',
@@ -42,11 +44,8 @@ class AdminController extends Controller
     public function get_all_requests()
     {
       //fetches all users
-      //  $users = User::all();
-      $read = DB::table('announcements')->where('status',1)
-      ->get();
-        $request = DB::table('announcements')->where('status',0)
-        ->get();
+        $read =  Announcement::with('user')->where('status',1)->get();
+        $request  =  Announcement::with('user')->where('status',0)->get();
 
         return view('admin.view-requests',
         array('read' => $read),
@@ -59,9 +58,10 @@ class AdminController extends Controller
     public function get_request($id)
     {
 
-        $request = DB::table('announcements')->where('id',$id)
-        ->get();
-
+        $request =  Announcement::with('user')->where('id',$id)->get();
+        // $request = DB::table('announcements')->where('id',$id)->with('user')
+        // ->get();
+         // return $request[0]->user[0]->first_name;
         return view('admin.approve-requests',
 
          array('requests' =>$request)
@@ -74,32 +74,35 @@ class AdminController extends Controller
     {
       //blocks user
 
-
        $user = User::find($id);
       if($user){
-  
-      //   User::update($id, array(
-      //   'account_status'=>0
-      // ));
-      //
-      //   return Redirect::to_route('admin.index',$id)->with('message','User blocked successfully');
-      return 1;
+       $user->account_status =0;
+       $user->save();
+
+         return Redirect::to('/admin')->with('message','User blocked successfully');
+
+
         }
-  //  return Redirect::to_route('admin.index',$id)->with('message','User blocking unsuccessful');
-  return 0;
+
+        return Redirect::to_route('/admin')->with('message','User blocking unsuccessful');
+
      }
 
-    public function read_request($id)
+
+    public function decline_request($id)
     {
       // make request as read
     $announcement = Announcement::find($id);
       if($announcement){
-        Announcement::update($id, array(
-        'status'=> 1
-        ));
+        $announcement->status =1;
+        $announcement->is_featured = 0;
+        $announcement->save();
 
-      }
+        return Redirect::to('/admin')->with('message','request declined successfully');
 
+        }
+
+       return Redirect::to('/admin')->with('message','request declined was unsuccessfull');
 
     }
 
@@ -109,9 +112,13 @@ class AdminController extends Controller
       $announcement = Announcement::find($id);
       if($announcement){
         $announcement->is_featured = 1;
+        $announcement->status = 1;
         $announcement->save();
+
+        return Redirect::to('/admin')->with('message','request approved successfully');
       }
 
+        return Redirect::to('/admin')->with('message','request approved was unsuccessfull');
 
     }
 }

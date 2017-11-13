@@ -1185,14 +1185,18 @@
 
 
                             <div class="profile-usertitle">
-                                <div class="profile-usertitle-name"> Marcus Doe </div>
+                                <div class="profile-usertitle-name"> {{$requests[0]->user[0]->first_name}} {{$requests[0]->user[0]->other_names}} </div>
                                 <div class="profile-usertitle-job">  </div>
                             </div>
                             <!-- END SIDEBAR USER TITLE -->
                             <!-- SIDEBAR BUTTONS -->
                             <div class="profile-userbuttons">
-                                <button type="button" class="btn btn-circle green btn-sm">Approve</button>
-                                <button type="button" class="btn btn-circle red btn-sm">Decline</button>
+                              <a  href="{{ route('admin.approve.request',$requests[0]->id) }}" class="btn btn-circle green btn-sm"><span class="hidden-xs"> Approve </span>  </a>
+
+                              <a  href="{{ route('admin.decline.request',$requests[0]->id) }}" class="btn btn-circle red btn-sm"><span class="hidden-xs"> Decline </span>  </a>
+
+                                <!-- <button type="button" class="btn btn-circle green btn-sm">Approve</button> -->
+                                <!-- <button type="button" class="btn btn-circle red btn-sm">Decline</button> -->
                             </div>
                             <!-- END SIDEBAR BUTTONS -->
                             <!-- SIDEBAR MENU -->
@@ -1231,7 +1235,7 @@
                                     <div class="uppercase profile-stat-title"> 61 </div>
                                     <div class="uppercase profile-stat-text"> Uploads </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!-- END STAT -->
                           <!--  <div>-->
                                 <!-- <h4 class="profile-desc-title">About Marcus Doe</h4>
@@ -1283,14 +1287,11 @@
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
                                                             <h4 class="panel-title">
-                                                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1"> Title: </a>
+                                                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1"> Title: {{$requests[0]->title}} </a>
                                                             </h4>
                                                         </div>
                                                         <div id="accordion1_1" class="panel-collapse collapse in">
-                                                            <div class="panel-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                                                                wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                                haven't heard of them accusamus labore sustainable VHS. </div>
+                                                            <div class="panel-body">{{$requests[0]->description}} </div>
                                                         </div>
                                                     </div>
                                                     <!-- <div class="panel panel-default">
@@ -1467,7 +1468,7 @@
                                                     <div class="panel panel-danger">
                                                         <div class="panel-heading">
                                                             <h4 class="panel-title">
-                                                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#accordion3_1"> code:  </a>
+                                                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#accordion3_1"> code: {{$requests[0]->payment}} </a>
                                                             </h4>
                                                         </div>
                                                         <!-- <div id="accordion3_1" class="panel-collapse collapse in">

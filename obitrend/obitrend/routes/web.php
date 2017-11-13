@@ -34,8 +34,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/profile/{slug}',[
@@ -63,7 +61,7 @@ Route::group(['middleware' => 'auth'], function()
     ]);
   // fetches the make request view
     Route::get('/announcements/make', [
-    'uses' => 'AnnouncementController@index',
+    'uses' => 'HomeController@index',
     'as' => 'client.index'
     ]);
 // sends client request from form data to controller
@@ -83,7 +81,7 @@ Route::group(['middleware' => 'auth'], function()
     ]);
     Route::get('/announcements/show/{id}', [
     'uses' => 'AnnouncementController@announcements',
-    'as' => 'client.view'
+    'as' => 'client.view.each'
     ]);
     Route::get('/admin/request/{id}', [
     'uses' => 'AdminController@get_request',
@@ -93,6 +91,16 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/admin/block/{id}', [
     'uses' => 'AdminController@block',
     'as' => 'admin.block.user'
+    ]);
+    //approves user request
+    Route::get('/admin/approve/{id}', [
+    'uses' => 'AdminController@approve_request',
+    'as' => 'admin.approve.request'
+    ]);
+    //decline user request
+    Route::get('/admin/decline/{id}', [
+    'uses' => 'AdminController@approve_request',
+    'as' => 'admin.decline.request'
     ]);
 
 

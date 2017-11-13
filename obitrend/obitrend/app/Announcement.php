@@ -7,7 +7,11 @@ use Storage;
 
 class Announcement extends Model
 {
-      //public $with = ['user','tribute',];
+
+    public function user()
+    {
+        return $this->hasMany(User::class,'id');
+    }
     protected $fillable = [
 
         'user_id',
@@ -24,10 +28,6 @@ class Announcement extends Model
         'title'
         ];
 
-    public function user()
-    {
-        return $this->belongsto(User::class,'users');
-    }
 
     public function tribute()
     {

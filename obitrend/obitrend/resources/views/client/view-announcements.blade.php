@@ -1233,7 +1233,7 @@
                             </ul>
                         </div>
                         <div class="portlet-body">
-                            <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
+                            <div class="scroller" style="height:400px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="portlet_tab1">
                                   @foreach ($all['announcements'] as $row)
@@ -1246,8 +1246,49 @@
                                     {{$row->title}}<br/>
                                     <p> {{$row->description}} </p>
                                         <div class="actions pull-right">
-                                            <a href="javascript:;" class="btn blue btn-sm">
-                                                <i class="fa fa-pencil"></i> Tribute </a>
+                                            <!-- <a href="javascript:;" class="btn blue btn-sm">
+                                                <i class="fa fa-pencil"></i> Tribute </a> -->
+                                                <button type="button" class="btn blue btn-sm" data-toggle="modal" data-target="#myModal{{$row->id}}" >tribute</button>
+                                                <!--modal start-->
+
+                                                <div class="modal fade" id="myModal{{$row->id}}" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                  <!-- Modal content-->
+                                                  <div class="modal-content col-lg-12 col-md-6 col-sm-6">
+
+                                                    <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h4 class="modal-title">Tributes{{$row->id}}</h4>
+                                                    </div>
+
+
+                                                   <!-- <div class="scroller" style="height:100px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">  -->
+                                                    <div class="modal-body">
+                                                      <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible="1" data-rail-color="blue" data-handle-color="red">
+                                                         <!-- <div class="scroller" style="height:100px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">  -->
+                                                         <p>Sorry for your loss</p>
+                                                         <p>May he rest in peace</p>
+                                                         <p>We will include you in our prayers</p>
+                                                         <p>Sorry for your loss</p>
+                                                    </div>
+                                                      </div>
+                                                    <div class="modal-footer">
+                                                      <div class="form-group">
+                                                          <!-- <label class="control-label col-md-3">Description</label> -->
+                                                          <div class="col-md-7">
+                                                              <textarea class="form-control" rows="2" name="description"></textarea>
+                                                          </div>
+                                                      </div>
+                                                       <button type="button" class="btn btn-default" data-dismiss="modal">post</button>
+                                                    </div>
+
+                                                  </div>
+
+                                                </div>
+                                                </div>
+
+                                                <!--modal end-->
                                             <div class="btn-group">
                                                 <a class="btn btn-sm green" href="javascript:;" data-toggle="dropdown">
                                                     <i class="fa fa-user"></i> Share
@@ -1268,7 +1309,7 @@
                                                     </li>
                                                     <li class="divider"> </li>
                                                     <li>
-                                                        <a href="javascript:;"> view Euology </a>
+                                                        <a href="javascript:;"> Download euology </a>
                                                     </li>
                                                 </ul>
 
@@ -1283,6 +1324,7 @@
                                 <div class="tab-pane" id="portlet_tab2">
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
                                     <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
+                                    <img width="70%" src="('/img/clients/male.png')"  >
                                        </div>
                                    @foreach ($all['missing'] as $row)
                                     {{$row->title}}<br/>{{$row->description}}

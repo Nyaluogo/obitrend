@@ -6,6 +6,7 @@ use App\Announcement;
 use App\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 use Session;
 
@@ -73,6 +74,45 @@ class AnnouncementController extends Controller
           return redirect()->route('create.announcement');
 
   }
+
+  public function create_comment(request $request)
+  {
+
+      //creates tribute
+      //      Tribute::create(array(
+      //          'announcement_id'=>Input::get('content'),
+      //          'user_id'=>Auth::user()->id,
+      //          'title'=>Input::get('title')
+      //
+      //        ));
+      //        //if successful redirect to dashboard
+      //    return redirect()->route('client.index');
+      // }else{
+      //
+      // }
+      //     return redirect()->route('create.announcement');
+
+  }
+
+  public function get_comment()
+  {
+
+      //creates tribute
+      //      Tribute::create(array(
+      //          'announcement_id'=>Input::get('content'),
+      //          'user_id'=>Auth::user()->id,
+      //          'title'=>Input::get('title')
+      //
+      //        ));
+      //        //if successful redirect to dashboard
+      //    return redirect()->route('client.index');
+      // }else{
+      //
+      // }
+      //     return redirect()->route('create.announcement');
+
+  }
+
   // update function
     public function update(request $request , $id)
     {

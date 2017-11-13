@@ -7,6 +7,7 @@ use Session;
 use  Auth;
 use App\Announcement;
 use App\Notification;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 
@@ -64,7 +65,7 @@ class HomeController extends Controller
 
            );
 
-          //dd($all['anniversaries']);
+        //  return $products[0]->user[0]->first_name;
     }
 
 
