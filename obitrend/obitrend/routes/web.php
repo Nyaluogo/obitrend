@@ -24,10 +24,10 @@ Route::get('/', function () {
 // ]);
  Route::get('/about', 'LandingController@index')->name('about');
   Route::get('/pricing', 'LandingController@pricing')->name('pricing');
-  Route::post('/profile/edit/profile',[
- 'uses' => 'LandingController@register',
- 'as' => 'regster'
- ]);
+ //  Route::post('/profile/edit/profile',[
+ // 'uses' => 'LandingController@register',
+ // 'as' => 'regster'
+ // ]);
 
 
 Auth::routes();
@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth'], function()
     'as' => 'admin.view.requests'
     ]);
   // fetches the make request view
-    Route::get('/announcements/make', [
+    Route::get('/announcements/view', [
     'uses' => 'HomeController@index',
     'as' => 'client.index'
     ]);
@@ -75,9 +75,9 @@ Route::group(['middleware' => 'auth'], function()
     'as' => 'update.announcement'
     ]);
     // fetches the request  view
-    Route::get('/announcements/view', [
-    'uses' => 'AnnouncementController@announcements',
-    'as' => 'client.view'
+    Route::get('/announcements/make', [
+    'uses' => 'AnnouncementController@index',
+    'as' => 'client.make'
     ]);
     Route::get('/announcements/show/{id}', [
     'uses' => 'AnnouncementController@announcements',
@@ -102,6 +102,7 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AdminController@approve_request',
     'as' => 'admin.decline.request'
     ]);
+     Route::get('storage/artwork/{id}','AnnouncementController@artwork');
 
 
 

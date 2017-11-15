@@ -1233,14 +1233,16 @@
                             </ul>
                         </div>
                         <div class="portlet-body">
+                          <!-- <img width="70%" src="{{ Storage::url('upload/about.PNG')}}"  > -->
                             <div class="scroller" style="height:400px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="portlet_tab1">
                                   @foreach ($all['announcements'] as $row)
                                     <div class ="col-lg-12">
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
-                                    <!-- <img width="100%" src="{{ URL::asset('storage/app/public/avatars/female.PNG')}}"  > -->
-                                       <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
+                                            <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
+                                        <!-- <img width="70%" src="{{ $row->image_path}}"  >  -->
+
                                        </div>
 
                                     {{$row->title}}<br/>
@@ -1324,13 +1326,11 @@
                                 <div class="tab-pane" id="portlet_tab2">
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
                                     <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
-                                    <img width="70%" src="('/img/clients/male.png')"  >
+                                    <!-- <img width="70%" src="('/img/clients/male.png')"  > -->
                                        </div>
                                    @foreach ($all['missing'] as $row)
-                                    {{$row->title}}<br/>{{$row->description}}
-                                    <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                        zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                        laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                    {{$row->title}}<br/>
+                                    <p> {{$row->description}} </p>
                                         <div class="actions pull-right">
 
                                             <div class="btn-group">
@@ -1365,10 +1365,8 @@
                                     <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
                                        </div>
                                   @foreach ($all['public'] as $row)
-                                  {{$row->title}}<br/>{{$row->description}}
-                                    <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                        zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                        laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                  {{$row->title}}<br/>
+                                    <p>{{$row->description}}</p>
                                         <div class="actions pull-right">
 
                                             <div class="btn-group">
@@ -1402,14 +1400,10 @@
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
                                     <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
                                        </div>
-                                       <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                           zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                           laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+
                                   @foreach ($all['anniversaries'] as $row)
-                                    {{$row->title}}<br/>{{$row->description}}
-                                    <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                        zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut
-                                        laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna. </p>
+                                    {{$row->title}}<br/>
+                                    <p>{{$row->description}} </p>
                                         <div class="actions pull-right">
 
                                             <div class="btn-group">

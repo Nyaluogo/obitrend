@@ -70,7 +70,7 @@
 
                 <div class="page-actions">
                     <div class="btn-group">
-                      <a  href="{{ route('client.index') }}" class="btn blue-chambray btn-outline btn-sm">
+                      <a  href="{{ route('client.make') }}" class="btn blue-chambray btn-outline btn-sm">
                               <i class="fa fa-plus"></i>
                               <span class="hidden-xs"> New </span>
                           </a>

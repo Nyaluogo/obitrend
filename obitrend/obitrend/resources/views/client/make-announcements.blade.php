@@ -1166,7 +1166,7 @@
                 <ul class="page-breadcrumb">
                     <li>
                         <i class="icon-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="{{ route('client.index') }}">Home</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
@@ -1546,7 +1546,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="control-label col-md-3">Eulogy
+                                                    <label class="control-label col-md-3">Picture
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
@@ -1617,19 +1617,19 @@
                                                         <p class="form-control-static" data-display="username"> </p>
                                                     </div>
                                                 </div> -->
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">Email:</label>
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="email"> </p>
                                                     </div>
-                                                </div>
-                                                <h4 class="form-section">Profile</h4>
+                                                </div> -->
+                                                <!-- <h4 class="form-section">Profile</h4>
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Fullname:</label>
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="fullname"> </p>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">Gender:</label>
                                                     <div class="col-md-4">
@@ -1653,7 +1653,7 @@
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="city"> </p>
                                                     </div> -->
-                                                
+
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Country:</label>
                                                     <div class="col-md-4">

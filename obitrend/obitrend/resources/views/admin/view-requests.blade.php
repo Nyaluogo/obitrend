@@ -1398,7 +1398,7 @@
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar4.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
-                                                    <span class="mt-comment-author">Michael Baker</span>
+                                                    <span class="mt-comment-author">{{$row->user[0]->first_name}}{{$row->user[0]->other_names}}</span>
                                                     <span class="mt-comment-date">{{$row->created_at}} </span>
                                                 </div>
                                                 <div class="mt-comment-text">{{$row->title}} <br/>{{$row->description}} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>

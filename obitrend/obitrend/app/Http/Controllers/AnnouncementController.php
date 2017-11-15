@@ -5,9 +5,14 @@ use  Auth;
 use App\Announcement;
 use App\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use InterImage;
+use Intervention\Image\ImageManagerStatic as Image;
 use Session;
 
 
@@ -58,6 +63,7 @@ class AnnouncementController extends Controller
               // 'image_thumb'=>'null',
                'image_path'=>$path,
                'description'=>Input::get('description'),
+                'country'=>Input::get('country'),
                'file_path'=>$file,
                'location'=>Input::get('location'),
                'payment'=>Input::get('payment'),
@@ -72,6 +78,7 @@ class AnnouncementController extends Controller
 
       }
           return redirect()->route('create.announcement');
+
 
   }
 
@@ -129,4 +136,15 @@ class AnnouncementController extends Controller
       {
         return Announcement::find($id);
       }
+
+      public function artwork( $id){
+      /* Fetch the artwork using the id */
+      $image_path = 'public/upload/'.$id;
+
+      $image = Storage::get($image_path);
+
+      /* Return the file */
+      // return Image::make($image)->response();
+       return redirect()->route('create.announcement');
+  }
 }

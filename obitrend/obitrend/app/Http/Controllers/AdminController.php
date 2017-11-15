@@ -9,6 +9,7 @@ use App\User;
 use App\Announcement;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -78,7 +79,7 @@ class AdminController extends Controller
       if($user){
        $user->account_status =0;
        $user->save();
-
+  Session::flash('success','error! profile not updated');
          return Redirect::to('/admin')->with('message','User blocked successfully');
 
 
