@@ -1291,14 +1291,16 @@
                                                 </div>
 
                                                 <!--modal end-->
+<!-- <div class="fb-share-button" data-href="http://localhost:8000/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2F&amp;src=sdkpreparse">Share</a></div> -->
                                             <div class="btn-group">
-                                                <a class="btn btn-sm green" href="javascript:;" data-toggle="dropdown">
+                                                <a class="btn btn-sm green"  data-toggle="dropdown">
                                                     <i class="fa fa-user"></i> Share
                                                     <i class="fa fa-angle-down"></i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right">
                                                     <li>
-                                                        <a href="javascript:;">
+
+                                                        <a class="fb-share-button" data-href="http://localhost:8000/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2F&amp;src=sdkpreparse">
                                                             <i class="fa fa-facebook"></i> Facebook</a>
                                                     </li>
                                                     <li>
@@ -1325,7 +1327,7 @@
                                 </div>
                                 <div class="tab-pane" id="portlet_tab2">
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
-                                    <img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >
+                                    <img width="70%" src="{{ route('client.image',$row->id) }}"  >
                                     <!-- <img width="70%" src="('/img/clients/male.png')"  > -->
                                        </div>
                                    @foreach ($all['missing'] as $row)
@@ -1376,8 +1378,9 @@
                                                 </a>
                                                 <ul class="dropdown-menu pull-right">
                                                     <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-facebook"></i> Facebook</a>
+
+                                                        <!-- <a href="javascript:;">
+                                                            <i class="fa fa-facebook"></i> Facebook</a> -->
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">

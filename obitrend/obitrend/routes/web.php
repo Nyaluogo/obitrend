@@ -64,9 +64,17 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'HomeController@index',
     'as' => 'client.index'
     ]);
+    Route::get('api/announcements/view', [
+    'uses' => 'HomeController@index',
+    'as' => 'client.index'
+    ]);
 // sends client request from form data to controller
     Route::post('/announcements/make', [
     'uses' => 'AnnouncementController@create',
+    'as' => 'create.announcement'
+    ]);
+    Route::post('api/announcements/make', [
+    'uses' => 'AnnouncementApiController@create',
     'as' => 'create.announcement'
     ]);
     //updates announcements
@@ -79,6 +87,11 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AnnouncementController@index',
     'as' => 'client.make'
     ]);
+    Route::get('api/announcements/make', [
+    'uses' => 'AnnouncementApiController@index',
+    'as' => 'client.make'
+    ]);
+    //fetches each announcement
     Route::get('/announcements/show/{id}', [
     'uses' => 'AnnouncementController@announcements',
     'as' => 'client.view.each'
@@ -102,7 +115,11 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AdminController@approve_request',
     'as' => 'admin.decline.request'
     ]);
-     Route::get('storage/artwork/{id}','AnnouncementController@artwork');
+     //Route::get('storage/artwork/{id}','AnnouncementController@artwork');
+     Route::get('storage/artwork', [
+     'uses' => 'AnnouncementController@artwork',
+     'as' => 'client.image'
+     ]);
 
 
 

@@ -1165,6 +1165,12 @@
                     </div>
                 </div>
             </div>
+
+
+  @if(Session::has('message'))
+      <div class="alert alert-success"><em> {!! session('message') !!}</em></div>
+  @endif
+
             <!-- END THEME PANEL -->
             <h1 class="page-title"> User Management
 

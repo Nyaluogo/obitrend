@@ -9,7 +9,7 @@ use App\User;
 use App\Announcement;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+//use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -46,12 +46,14 @@ class AdminController extends Controller
     {
       //fetches all users
         $read =  Announcement::with('user')->where('status',1)->get();
-        $request  =  Announcement::with('user')->where('status',0)->get();
+      $request  =  Announcement::with('user')->where('status',0)->get();
 
         return view('admin.view-requests',
-        array('read' => $read),
-        array('requests' =>$request)
-      );
+       array('read' => $read),
+       array('requests' =>$request)
+     );
+  //  return  $read[0]->user[0]->first_name;{{$row[0]->user[0]->first_name}}{{$row[0]->user[0]->other_names}}
+
 
     }
 
@@ -60,13 +62,13 @@ class AdminController extends Controller
     {
 
         $request =  Announcement::with('user')->where('id',$id)->get();
-        // $request = DB::table('announcements')->where('id',$id)->with('user')
+        // $request = DB::table('announcements')->with('user')->where('id',$id)
         // ->get();
-         // return $request[0]->user[0]->first_name;
-        return view('admin.approve-requests',
-
-         array('requests' =>$request)
-         );
+          return $request;
+        // return view('admin.approve-requests',
+        //
+        //  array('requests' =>$request)
+        //  );
 
 
     }
@@ -79,7 +81,7 @@ class AdminController extends Controller
       if($user){
        $user->account_status =0;
        $user->save();
-  Session::flash('success','error! profile not updated');
+  \Session::flash('success','error! profile not updated');
          return Redirect::to('/admin')->with('message','User blocked successfully');
 
 

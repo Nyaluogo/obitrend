@@ -8,9 +8,9 @@ use Storage;
 class Announcement extends Model
 {
 
-    public function user()
+    public function author()
     {
-        return $this->hasMany(User::class,'id');
+        return $this->belongsTo('App\User','user_id');
     }
     protected $fillable = [
 

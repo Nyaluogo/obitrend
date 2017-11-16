@@ -1294,7 +1294,7 @@
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar1.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
-                                                    <span class="mt-comment-author">{{$row->user[0]->first_name}}{{$row->user[0]->other_names}}</span>
+                                                <span class="mt-comment-author">{{$row->type_of_announcement}} </span>
                                                     <span class="mt-comment-date">{{$row->created_at}} </span>
                                                 </div>
                                                 <div class="mt-comment-text">{{$row->title}} <br/>{{$row->description}} </div>
@@ -1398,7 +1398,7 @@
                                                 <img src="{{asset('layout_assets/pages/media/users/avatar4.jpg')}}" /> </div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
-                                                    <span class="mt-comment-author">{{$row->user[0]->first_name}}{{$row->user[0]->other_names}}</span>
+                                                     <span class="mt-comment-author">{{$row->user[0]->first_name}}{{$row->user[0]->other_names}}</span>
                                                     <span class="mt-comment-date">{{$row->created_at}} </span>
                                                 </div>
                                                 <div class="mt-comment-text">{{$row->title}} <br/>{{$row->description}} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
@@ -1636,7 +1636,7 @@
                                 <img class="media-object" src="../assets/layouts/layout/img/avatar9.jpg" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Deon Portalatin</h4>
-                                    <div class="media-heading-sub"> CFO, H&D LTD </div>
+                                    <div class="media-heading-sub"> CFO, HD LTD </div>
                                 </div>
                             </li>
                             <li class="media">

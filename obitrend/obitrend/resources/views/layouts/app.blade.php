@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url"           content="http://localhost:8000/home" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Obitrend" />
+    <meta property="og:description"   content="Your description" />
+    <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -44,6 +49,14 @@
 
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
     <div id="app">
 
 

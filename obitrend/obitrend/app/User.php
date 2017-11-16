@@ -45,8 +45,8 @@ class User extends Authenticatable
       return $this->hasOne(Profile::class,'profiles');
     }
 
-    //   public function announcement()
-    // {
-    //     return $this->hasMany(Announcement::class,'announcements');
-    // }
+      public function announcements()
+    {
+        return $this->hasMany('App\Announcement');
+    }
 }

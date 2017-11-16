@@ -18,7 +18,7 @@ use Session;
 
 
 
-class AnnouncementController extends Controller
+class AnnouncementApiController extends Controller
 {
   /**
    * Create a new controller instance.
@@ -35,7 +35,8 @@ class AnnouncementController extends Controller
   public function index()
   {
       $requests = Notification::all();
-      return view('client.make-announcements',array('requests' => $requests ));
+    //  return view('client.make-announcements',array('requests' => $requests ));
+    return "hello world";
   }
 
   //fetches  all approved requests
@@ -43,7 +44,7 @@ class AnnouncementController extends Controller
     {
          $announcements = DB::table('announcements')->where('is_featured',1)->get();
         //return view('client.view-announcements');
-         return view('client.view-announcements',array('request' => $announcements ));
+         return array('request' => $announcements );
     }
 
 // model make request data from form
@@ -73,11 +74,12 @@ class AnnouncementController extends Controller
 
              ));
              //if successful redirect to dashboard
-         return redirect()->route('client.index');
+        // return redirect()->route('client.index');
+        return array('message' => 'success' );
       }else{
 
       }
-          return redirect()->route('create.announcement');
+          return array('message' => 'success' ) ;
 
 
   }
@@ -131,23 +133,20 @@ class AnnouncementController extends Controller
         return "successful update #".$announcement->id;
 
     }
-
     // find function
       public function show($id)
       {
         return Announcement::find($id);
       }
-/* Fetch the artwork using the id */
-      public function artwork(){
-// $announcements = DB::table('announcements')->where('is_featured',1)->get();
-// $announcement = array('request' => $announcements );
- $announcements= Announcement::with('user')->where('is_featured',1)->get();
-      $image_path = 'public/upload/about.PNG';
 
-      $image = Storage::get($image_path );
+      public function artwork( $id){
+      /* Fetch the artwork using the id */
+      $image_path = 'public/upload/'.$id;
+
+      $image = Storage::get($image_path);
 
       /* Return the file */
-  //     return Image::make($image)->response();
-      return $announcements;
+      // return Image::make($image)->response();
+       return redirect()->route('create.announcement');
   }
 }
