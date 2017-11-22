@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="page-container">
     <!-- BEGIN SIDEBAR -->
@@ -1227,7 +1228,7 @@
                                 <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla et facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
                                     zzril delenit augue et duis dolore feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem
                                     insitam; est usus legentis in iis qui facit eorum claritatem. </p>
-                            
+
                             </div>
                             <div class="blog-single-foot">
                                 <ul class="blog-post-tags">

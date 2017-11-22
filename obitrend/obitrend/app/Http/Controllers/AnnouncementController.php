@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use  Auth;
 use App\Announcement;
 use App\Notification;
+use App\Tribute;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Response;
@@ -132,6 +133,7 @@ class AnnouncementController extends Controller
       public function show($id)
       {
         return Announcement::find($id);
+      //  return response()->download(public_path('file_path/from_public_dir.pdf'));
       }
 /* Fetch the artwork using the id */
       public function artwork($id, Request $request){

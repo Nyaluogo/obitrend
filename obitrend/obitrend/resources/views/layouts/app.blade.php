@@ -4,11 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url"           content="http://localhost:8000/home" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Obitrend" />
-    <meta property="og:description"   content="Your description" />
-    <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -156,10 +152,17 @@
                                                         <!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
                                                         <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
                                                         <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                                                          @if(count($requests)==0)
+                                                          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                              <i class="icon-bell"></i>
+                                                              <span class="badge badge-default"></span>
+                                                          </a>
+                                                              @else
                                                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                                                 <i class="icon-bell"></i>
                                                                 <span class="badge badge-default"><?php echo count($requests); ?></span>
                                                             </a>
+                                                                  @endif
                                                             <ul class="dropdown-menu">
                                                                 <li class="external">
                                                                     <h3>

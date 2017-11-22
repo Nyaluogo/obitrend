@@ -66,7 +66,7 @@ class HomeController extends Controller
 
            );
 
-        //  return $products[0]->user[0]->first_name;
+    //    return count($all['public']);
     }
 
 

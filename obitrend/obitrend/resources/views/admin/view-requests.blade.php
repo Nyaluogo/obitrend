@@ -1090,7 +1090,7 @@
         <div class="page-content">
             <!-- BEGIN PAGE HEADER-->
             <!-- BEGIN THEME PANEL -->
-            <div class="theme-panel">
+            <!-- <div class="theme-panel">
                 <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
                     <i class="icon-settings"></i>
                 </div>
@@ -1165,7 +1165,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- END THEME PANEL -->
             <h1 class="page-title"> Admin Dashboard
 
@@ -1288,7 +1288,7 @@
                                 <div class="tab-pane active" id="portlet_comments_1">
                                     <!-- BEGIN: Comments -->
                                     <div class="mt-comments">
-                                      @if(!$requests)
+                                      @if(count($requests)==0)
                                       <div class="note note-success"><h3>No pending requests </h3>  </div>
 
                                          @else
@@ -1329,13 +1329,13 @@
                                 <div class="tab-pane" id="portlet_comments_2">
                                     <!-- BEGIN: Comments -->
                                     <div class="mt-comments">
-                                      @if(!$read)
+                                     @if(count($read)==0) 
                                           <div class="note note-success"><h3>No sorted requests </h3>  </div>
                                          @else
                                       @foreach ($read as $row)
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="{{asset('layout_assets/pages/media/users/avatar4.jpg')}}" /> 
+                                                <img src="{{asset('layout_assets/pages/media/users/avatar4.jpg')}}" />
                                                 <!-- <img width="70%" src="{{$row->file_path}}"  > -->
                                               </div>
                                             <div class="mt-comment-body">

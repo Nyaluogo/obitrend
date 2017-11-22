@@ -1348,7 +1348,7 @@
 
                                 </div>
                                 <div class="tab-pane" id="portlet_tab2">
-                                  @if(!$all['missing'])
+                              @if(count($all['missing'])==0)
                                       <div class="note note-success"><h3>No missing persons </h3>  </div>
                                       @else
                                     @foreach ($all['missing'] as $row)
@@ -1390,7 +1390,7 @@
                                    @endif
                                 </div>
                                 <div class="tab-pane" id="portlet_tab3">
-                                  @if($all['public'])
+                                    @if(count($all['public'])==0)
                                       <div class="note note-success"><h3>No Public Notices</h3>  </div>
 
                                      @else
@@ -1435,7 +1435,7 @@
                                      @endif
                                 </div>
                                 <div class="tab-pane" id="portlet_tab4">
-                                  @if($all['anniversaries'])
+                              @if(count($all['anniversaries'])==0)
                                     <div class="note note-success"><h3>No anniversaries</h3>  </div>
 
                                      @else
