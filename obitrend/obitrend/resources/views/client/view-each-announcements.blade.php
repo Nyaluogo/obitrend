@@ -1090,7 +1090,7 @@
         <div class="page-content">
             <!-- BEGIN PAGE HEADER-->
             <!-- BEGIN THEME PANEL -->
-            <div class="theme-panel">
+            <!-- <div class="theme-panel">
                 <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
                     <i class="icon-settings"></i>
                 </div>
@@ -1165,7 +1165,10 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            @if(Session::has('message'))
+                <div class="alert alert-success"><em> {!! session('message') !!}</em></div>
+            @endif
             <!-- END THEME PANEL -->
             <h1 class="page-title"> Announcement
                 <!-- <small>blog post samples</small> -->
@@ -1174,7 +1177,7 @@
                 <ul class="page-breadcrumb">
                     <li>
                         <i class="icon-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="{{ route('client.index') }}">Home</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
@@ -1183,11 +1186,30 @@
                 </ul>
                 <div class="page-toolbar">
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
+                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Share
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li>
+                          <!-- <ul class="dropdown-menu pull-right"> -->
+                              <li>
+
+                                  <a class="fb-share-button" data-href="" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2F&amp;src=sdkpreparse">
+                                      <i class="fa fa-facebook"></i> Facebook</a>
+                              </li>
+                              <li>
+                                  <a href="javascript:;">
+                                      <i class="fa fa-linkedin"></i> Linkedin </a>
+                              </li>
+                              <li>
+                                  <a href="javascript:;">
+                                      <i class="fa fa-twitter"></i> Twitter</a>
+                              </li>
+                              <li class="divider"> </li>
+                              <li>
+                                  <a href="javascript:;"> Download euology </a>
+                              </li>
+                          <!-- </ul> -->
+                            <!-- <li>
                                 <a href="#">
                                     <i class="icon-bell"></i> Action</a>
                             </li>
@@ -1203,7 +1225,7 @@
                             <li>
                                 <a href="#">
                                     <i class="icon-bag"></i> Separated link</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -1214,279 +1236,188 @@
                     <div class="col-lg-7">
                         <div class="blog-single-content bordered blog-container">
                             <div class="blog-single-head">
-                                <h1 class="blog-single-head-title">Metronic Blog Reborn</h1>
+                                <h1 class="blog-single-head-title">{{ $request[0]->title }}</h1>
                                 <div class="blog-single-head-date">
                                     <i class="icon-calendar font-blue"></i>
-                                    <a href="javascript:;">Oct 24, 2015</a>
+                                    <a href="javascript:;">{{ $request[0]->created_at->format('d/m/Y') }}</a>
                                 </div>
                             </div>
                             <div class="blog-single-img">
-                                <img src="{{asset('layout_assets/pages/img/background/4.jpg')}}" /> </div>
+                                <!-- <img src="{{  $request[0]->file_path }}" />  -->
+
+                                <img width="70%" src="{{Storage::url($request[0]->file_path)}}" /></div>
+
                             <div class="blog-single-desc">
-                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore siat magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-                                <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla et facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-                                    zzril delenit augue et duis dolore feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem
-                                    insitam; est usus legentis in iis qui facit eorum claritatem. </p>
+                                <p>{{ $request[0]->description }}</p>
+
 
                             </div>
-                            <div class="blog-single-foot">
+                            <div class="blog-single-foot pull-right">
+                                <!-- <h3 class="blog-single-head-title pull-right">{{ $request[0]->title }}</h3> -->
                                 <ul class="blog-post-tags">
                                     <li class="uppercase">
-                                        <a href="javascript:;">Bootstrap</a>
+                                        <a href="javascript:;">{{ $request[0]->location }}</a>
                                     </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">Sass</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">HTML</a>
-                                    </li>
+                                    <!-- <li class="uppercase">
+                                        <a href="javascript:;">{{ $request[0]->location }}</a>
+                                    </li> -->
+                                    <!-- <li class="uppercase">
+                                        <a href="javascript:;">{{ $request[0]->description }}</a>
+                                    </li> -->
                                 </ul>
                             </div>
 
-                            <!--<div class="blog-comments">
-                                <h3 class="sbold blog-comments-title">Comments(30)</h3>
-                               <div class="c-comment-list">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" alt="" src="../assets/pages/img/avatars/team1.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">Sean</a> on
-                                                <span class="c-date">23 May 2015, 10:40AM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" alt="" src="../assets/pages/img/avatars/team3.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">Strong Strong</a> on
-                                                <span class="c-date">21 May 2015, 11:40AM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a href="#">
-                                                        <img class="media-object" alt="" src="../assets/pages/img/avatars/team4.jpg"> </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">
-                                                        <a href="#">Emma Stone</a> on
-                                                        <span class="c-date">30 May 2015, 9:40PM</span>
-                                                    </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" alt="" src="../assets/pages/img/avatars/team7.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">Nick Nilson</a> on
-                                                <span class="c-date">30 May 2015, 9:40PM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-                                    </div>
-                                </div>
-                                <h3 class="sbold blog-comments-title">Leave A Comment</h3>
-                                <form action="#">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Name" class="form-control c-square"> </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Email" class="form-control c-square"> </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Website" class="form-control c-square"> </div>
-                                    <div class="form-group">
-                                        <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-square"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
-                                    </div>
-                                </form>
-                            </div>-->
+
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="blog-single-sidebar bordered blog-container">
-                            <div class="blog-single-sidebar-search">
-                                <div class="input-icon right">
-                                    <i class="icon-magnifier"></i>
-                                    <input type="text" class="form-control" placeholder="Search Blog"> </div>
+
+              <div class="col-lg-5">
+                <!-- <div class="col-md-6"> -->
+                    <!-- BEGIN PORTLET -->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">Tributes</span>
+                                <!-- <span class="caption-helper">45 pending</span> -->
                             </div>
-                            <div class="blog-comments">
-                                <h3 class="sbold blog-comments-title">Comments(30)</h3>
-                               <div class="c-comment-list">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" alt="" src="../assets/pages/img/avatars/team1.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">Sean</a> on
-                                                <span class="c-date">23 May 2015, 10:40AM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" alt="" src="../assets/pages/img/avatars/team3.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">Strong Strong</a> on
-                                                <span class="c-date">21 May 2015, 11:40AM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a href="#">
-                                                        <img class="media-object" alt="" src="../assets/pages/img/avatars/team4.jpg"> </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">
-                                                        <a href="#">Emma Stone</a> on
-                                                        <span class="c-date">30 May 2015, 9:40PM</span>
-                                                    </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img class="media-object" alt="" src="../assets/pages/img/avatars/team7.jpg"> </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                <a href="#">Nick Nilson</a> on
-                                                <span class="c-date">30 May 2015, 9:40PM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-                                    </div>
-                                </div>
-                                <h3 class="sbold blog-comments-title">Leave A Comment</h3>
-                                <form action="#">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Name" class="form-control c-square"> </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Email" class="form-control c-square"> </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Website" class="form-control c-square"> </div>
-                                    <div class="form-group">
-                                        <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-square"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- <div class="blog-single-sidebar-recent">
-                                <h3 class="blog-sidebar-title uppercase">Recent Posts</h3>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:;">Metronic Admin Progress</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">New UI Features</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Lorem Ipsum Dolore Amet</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Userfull Pages Released</a>
-                                    </li>
-                                </ul>
-                            </div> -->
-                            <!-- <div class="blog-single-sidebar-tags">
-                                <h3 class="blog-sidebar-title uppercase">Tags</h3>
-                                <ul class="blog-post-tags">
-                                    <li class="uppercase">
-                                        <a href="javascript:;">Bootstrap</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">Sass</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">HTML</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">CSS</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">Gulp</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">Framework</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">Admin Theme</a>
-                                    </li>
-                                    <li class="uppercase">
-                                        <a href="javascript:;">UI Features</a>
-                                    </li>
-                                </ul>
-                            </div> -->
-                            <!-- <div class="blog-single-sidebar-links">
-                                <h3 class="blog-sidebar-title uppercase">Useful Links</h3>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:;">Lorem Ipsum </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Dolore Amet</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Metronic Database</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">UI Features</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Advanced Forms</a>
-                                    </li>
-                                </ul>
-                            </div> -->
-                            <!-- <div class="blog-single-sidebar-ui">
-                                <h3 class="blog-sidebar-title uppercase">UI Examples</h3>
-                                <div class="row ui-margin">
-                                    <div class="col-xs-4 ui-padding">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/background/1.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-4 ui-padding">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/background/37.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-4 ui-padding">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/background/57.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-4 ui-padding">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/background/53.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-4 ui-padding">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/background/59.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-4 ui-padding">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/background/42.jpg" />
-                                        </a>
-                                    </div>
+                            <!-- <div class="inputs">
+                                <div class="portlet-input input-inline input-small ">
+                                    <div class="input-icon right">
+                                        <i class="icon-magnifier"></i>
+                                        <input type="text" class="form-control form-control-solid" placeholder="search..."> </div>
                                 </div>
                             </div> -->
                         </div>
+                        <div class="portlet-body">
+                            <div class="scroller" style="height: 305px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                                <div class="general-item-list">
+                                  @if(count($tribute)==0)
+                                  <div class="note note-success"><h3>No tributes</h3>  </div>
+
+                                     @else
+
+                                  <!-- @foreach ($tribute as $row) -->
+                                  <?php
+														for ($i = 0; $i < count($tribute); ++$i) { ?>
+                              <div class="item">
+                                  <div class="item-head">
+                                      <div class="item-details">
+                                          <img class="item-pic" src="{{asset('layout_assets/pages/media/users/avatar12.png')}}">
+                                          <a href="" class="item-name primary-link">{{ $tribute[$i]->user->first_name }}   {{ $tribute[0]->user->other_names }}</a>
+                                          <span class="item-label">1 day ago</span>
+                                      </div>
+                                      <span class="item-status">
+                                          <!-- <span class="badge badge-empty badge-success"></span> </span> -->
+                                  </div>
+                                  <div class="item-body">{{ $tribute[$i]->comment}}{{ $tribute[$i]->id}}</div>
+                              </div>
+
+
+											                   <?php }?>
+
+
+
+
+
+                                    <!-- @endforeach -->
+
+
+                                   @endif
+                                    <!-- <div class="item">
+                                        <div class="item-head">
+                                            <div class="item-details">
+                                                <img class="item-pic" src="../assets/pages/media/users/avatar3.jpg">
+                                                <a href="" class="item-name primary-link">Mark</a>
+                                                <span class="item-label">5 hrs ago</span>
+                                            </div>
+                                            <span class="item-status">
+                                                <span class="badge badge-empty badge-warning"></span> Pending</span>
+                                        </div>
+                                        <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat tincidunt ut laoreet. </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item-head">
+                                            <div class="item-details">
+                                                <img class="item-pic" src="../assets/pages/media/users/avatar6.jpg">
+                                                <a href="" class="item-name primary-link">Nick Larson</a>
+                                                <span class="item-label">8 hrs ago</span>
+                                            </div>
+                                            <span class="item-status">
+                                                <span class="badge badge-empty badge-primary"></span> Closed</span>
+                                        </div>
+                                        <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh. </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item-head">
+                                            <div class="item-details">
+                                                <img class="item-pic" src="../assets/pages/media/users/avatar7.jpg">
+                                                <a href="" class="item-name primary-link">Nick Larson</a>
+                                                <span class="item-label">12 hrs ago</span>
+                                            </div>
+                                            <span class="item-status">
+                                                <span class="badge badge-empty badge-danger"></span> Pending</span>
+                                        </div>
+                                        <div class="item-body"> Consectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item-head">
+                                            <div class="item-details">
+                                                <img class="item-pic" src="../assets/pages/media/users/avatar9.jpg">
+                                                <a href="" class="item-name primary-link">Richard Stone</a>
+                                                <span class="item-label">2 days ago</span>
+                                            </div>
+                                            <span class="item-status">
+                                                <span class="badge badge-empty badge-danger"></span> Open</span>
+                                        </div>
+                                        <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ut laoreet dolore magna aliquam erat volutpat. </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item-head">
+                                            <div class="item-details">
+                                                <img class="item-pic" src="../assets/pages/media/users/avatar8.jpg">
+                                                <a href="" class="item-name primary-link">Dan</a>
+                                                <span class="item-label">3 days ago</span>
+                                            </div>
+                                            <span class="item-status">
+                                                <span class="badge badge-empty badge-warning"></span> Pending</span>
+                                        </div>
+                                        <div class="item-body"> Lorem ipsum dolor sit amet, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item-head">
+                                            <div class="item-details">
+                                                <img class="item-pic" src="../assets/pages/media/users/avatar2.jpg">
+                                                <a href="" class="item-name primary-link">Larry</a>
+                                                <span class="item-label">4 hrs ago</span>
+                                            </div>
+                                            <span class="item-status">
+                                                <span class="badge badge-empty badge-success"></span> Open</span>
+                                        </div>
+                                        <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
+                                    </div> -->
+                                </div>
+                            </div>
+<form  action="{{ route('create.comment')}}" method="POST">
+    {{ csrf_field() }}
+
+                            <div class="form-group form-md-line-input form-md-floating-label has-success">
+
+<input type="text" class="form-control" name="comment" id="form_control_1">
+<label for="form_control_1">Tribute goes here</label>
+</div>
+
+ <input type="hidden" name="announcement_id" value="{{$request[0]->id}}">
+ <button class="btn green-haze" type="submit">post tribute</button>
+   </form>
+
+
+
+                        </div>
                     </div>
+
                 </div>
+                
             </div>
         </div>
         <!-- END CONTENT BODY -->

@@ -81,7 +81,7 @@
                                     Register now
                                 </p>
                                 <a class="btn btn-primary inner-link hidden-xs" href="{{ route('login') }}">Register</a>
-                                <a class="btn btn-transparent hidden-xs" href="{{ route('login') }}">Login</a>
+                                 <a class="btn btn-transparent hidden-xs" href="{{ route('login') }}">Login</a>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                 </h1>
                                 <h2 class="fw-300 mb-20 theme-color">Perfect advertising solution for your announcements</h2>
                                 <p class="mb-30">We’re Obitrend, a advertising company located in the heart of Nairobi,Kenya. We pride ourselves on advertising announcements but not limited to death,missing persons and public notices  Take a look around and don’t be shy.</p>
-                                <p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum typi non.</p>
+                                <!-- <p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum typi non.</p> -->
                                 <a class="btn btn-default mt-20" href="{{ route('about') }}">read more</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">

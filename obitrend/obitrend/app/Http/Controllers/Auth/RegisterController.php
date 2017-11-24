@@ -67,7 +67,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-          $fr = "TANZANIA" ;
+          // $fr = "TANZANIA" ;
         if($data['gender'])
       {
         $avatar = 'public/defaults/avatars/male.png';
@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'other_names' => $data['other_names'],
             'email' => $data['email'],
             'phone_number' => $data['phone'],
-            'country' => $data['gender'],
+            'country' => $data['country'],
             'password' => bcrypt($data['password']),
             'access_level' => 0,
             'gender' => $data['gender'],

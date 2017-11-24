@@ -1089,7 +1089,7 @@
         <div class="page-content">
             <!-- BEGIN PAGE HEADER-->
             <!-- BEGIN THEME PANEL -->
-            <div class="theme-panel">
+            <!-- <div class="theme-panel">
                 <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
                     <i class="icon-settings"></i>
                 </div>
@@ -1164,7 +1164,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- END THEME PANEL -->
 
             <div class="page-bar">
@@ -1180,27 +1180,27 @@
                 </ul>
                 <div class="page-toolbar">
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
+                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> View
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li>
+                            <!-- <li>
                                 <a href="#">
                                     <i class="icon-bell"></i> Action</a>
+                            </li> -->
+                            <li>
+                                <a href="#">
+                                    <i class="icon-user"></i>My country</a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-shield"></i> Another action</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-user"></i> Something else here</a>
+                                    <i class="icon-users"></i>All </a>
                             </li>
                             <li class="divider"> </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#">
                                     <i class="icon-bag"></i> Separated link</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -1261,10 +1261,7 @@
                                   @foreach ($all['announcements'] as $row)
                                     <div class ="col-lg-12">
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
-                                            <!--<img width="70%" src="{{ URL::asset('layout_assets/img/clients/male.png')}}"  >-->
-                                         <img width="70%" src="{{ $row->file_path}}"  >
-
-                                       </div>
+                                      <img width="70%" src="{{Storage::url($row->file_path)}}" /></div>
 
                                     {{$row->title}}<br/>
                                     <p> {{$row->description}} </p>
@@ -1313,7 +1310,7 @@
 
                                                 <!--modal end-->
 <!-- <div class="fb-share-button" data-href="http://localhost:8000/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2F&amp;src=sdkpreparse">Share</a></div> -->
-                                            <div class="btn-group">
+                                            <!-- <div class="btn-group">
                                                 <a class="btn btn-sm green"  data-toggle="dropdown">
                                                     <i class="fa fa-user"></i> Share
                                                     <i class="fa fa-angle-down"></i>
@@ -1338,7 +1335,7 @@
                                                     </li>
                                                 </ul>
 
-                                            </div>
+                                            </div> -->
                                         </div><br/>
                                         <hr/>
                                         </div>
@@ -1353,11 +1350,12 @@
                                       @else
                                     @foreach ($all['missing'] as $row)
                                   <div class ="col-lg-2 col-md-2 col-sm-2">
-                                    <img width="70%" src="{{$row->image_path}}"  >
+
+                                    <img width="70%" src=" {{Storage::url($row->file_path)}}"  >
                                        </div>
 
                                     {{$row->title}}<br/>
-                                    <p> {{$row->description}} {{$row->image_path}}</p>
+                                    <p> {{$row->description}} </p>
                                         <div class="actions pull-right">
 
                                             <div class="btn-group">

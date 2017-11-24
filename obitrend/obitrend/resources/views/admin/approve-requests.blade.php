@@ -1178,7 +1178,7 @@
                         <div class="portlet light profile-sidebar-portlet ">
                             <!-- SIDEBAR USERPIC -->
                             <div class="profile-userpic">
-                                <img src="{{ URL::asset('layout_assets/img/clients/male.png')}}"   class="img-responsive" alt=""> </div>
+                                <img src="{{asset('layout_assets/pages/media/users/avatar12.png')}}"   class="img-responsive" alt=""> </div>
                             <!-- END SIDEBAR USERPIC -->
                             <!-- SIDEBAR USER TITLE -->
 
@@ -1379,8 +1379,11 @@
                                             <!-- MEMBERSHIP TAB -->
                                             <div class="tab-pane" id="tab_1_2">
                                                 <div id="accordion2" class="panel-group">
+                                                  <div class="blog-single-img">
+                                        
 
-                                                    <!-- <div class="panel panel-danger">
+                                                      <img width="70%" src="{{Storage::url($requests[0]->image_path)}}" /></div>
+                                                <!-- <div class="panel panel-danger">
                                                         <div class="panel-heading">
                                                             <h4 class="panel-title">
                                                                 <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion2" href="#accordion2_2"> 2. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ? </a>

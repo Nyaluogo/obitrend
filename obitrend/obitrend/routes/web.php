@@ -112,16 +112,22 @@ Route::group(['middleware' => 'auth'], function()
     ]);
     //decline user request
     Route::get('/admin/decline/{id}', [
-    'uses' => 'AdminController@approve_request',
+    'uses' => 'AdminController@decline_request',
     'as' => 'admin.decline.request'
     ]);
+    //gets each request as selected by the user
     Route::get('announcement/each/{id}', [
     'uses' => 'AnnouncementController@get_each_announcements',
     'as' => 'client.each.announcement'
     ]);
+    //posts tributes
+    Route::post('/tributes/create', [
+    'uses' => 'AnnouncementController@create_comment',
+    'as' => 'create.comment'
+    ]);
     Route::get('storage/upload/{id}','AnnouncementController@artwork');
-    Route::get('storage/avatars/{id}','AnnouncementController@artwork');
-    Route::get('storage/defaults/avatars/{id}','AnnouncementController@artwork');
+    // Route::get('storage/avatars/{id}','AnnouncementController@artwork');
+    // Route::get('storage/defaults/avatars/{id}','AnnouncementController@artwork');
     // Route::get('storage/upload/{path}', [
     // 'uses' => 'AnnouncementController@artwork',
     // 'as' => 'client.image'

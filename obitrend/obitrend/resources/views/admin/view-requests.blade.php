@@ -1297,8 +1297,9 @@
                                         <div class="mt-comment">
                                           <!-- <div class="note note-success"><h3>No pending requests </h3>  </div> -->
                                             <div class="mt-comment-img">
-                                                <!-- <img src="{{asset('layout_assets/pages/media/users/avatar1.jpg')}}" /> -->
-                                                <img width="70%" src="{{$row->file_path}}"  >
+                                                 <!-- <img src="{{asset('layout_assets/pages/media/users/avatar1.jpg')}}" /> -->
+                                                   <img width="100%"src="{{asset('layout_assets/pages/media/users/avatar12.png')}}" />
+
                                               </div>
                                             <div class="mt-comment-body">
                                                 <div class="mt-comment-info">
@@ -1329,13 +1330,14 @@
                                 <div class="tab-pane" id="portlet_comments_2">
                                     <!-- BEGIN: Comments -->
                                     <div class="mt-comments">
-                                     @if(count($read)==0) 
+                                     @if(count($read)==0)
                                           <div class="note note-success"><h3>No sorted requests </h3>  </div>
                                          @else
                                       @foreach ($read as $row)
                                         <div class="mt-comment">
                                             <div class="mt-comment-img">
-                                                <img src="{{asset('layout_assets/pages/media/users/avatar4.jpg')}}" />
+                                                <img width="100%"src="{{asset('layout_assets/pages/media/users/avatar12.png')}}" />
+                                                <!-- <img width="70%"src="{{asset('layout_assets/pages/media/users/avatar1.jpg')}}" /> -->
                                                 <!-- <img width="70%" src="{{$row->file_path}}"  > -->
                                               </div>
                                             <div class="mt-comment-body">

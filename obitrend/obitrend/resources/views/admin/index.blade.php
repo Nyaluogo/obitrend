@@ -1089,7 +1089,7 @@
         <div class="page-content">
             <!-- BEGIN PAGE HEADER-->
             <!-- BEGIN THEME PANEL -->
-            <div class="theme-panel">
+            <!-- <div class="theme-panel">
                 <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
                     <i class="icon-settings"></i>
                 </div>
@@ -1164,7 +1164,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
   @if(Session::has('message'))

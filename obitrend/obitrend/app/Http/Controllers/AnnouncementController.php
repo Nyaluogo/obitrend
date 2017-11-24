@@ -63,7 +63,7 @@ class AnnouncementController extends Controller
           $file = $request->file_path->storeAs('public/upload',$filename);
       //creates announcements
 
-    //  $path = Storage::disk('public')->putfile('upload',$request->file);
+    //  $path = Storage::disk('public')->putfile('id',$request->file);
            Announcement::create(array(
                'content'=>Input::get('content'),
                'user_id'=>Auth::user()->id,
@@ -90,18 +90,21 @@ class AnnouncementController extends Controller
 
   }
 
-  public function create_comment(request $request , $id)
+  public function create_comment(request $request )
   {
-
+ $id = Input::get('announcement_id');
       //creates tribute
      Tribute::create(array(
-               'announcement_id'=> $id,
+               'announcement_id'=>$id,
                'user_id'=>Auth::user()->id,
-               'title'=>Input::get('comment')
+               'comment'=>Input::get('comment')
 
              ));
              //if successful redirect to dashboard
-        return redirect()->back()->with('message','Tribute posted successfully');
+    return redirect()->back()->with('message','Tribute posted successfully');
+      //  return Redirect::to('announcement/each/{$id}')->with('message','User blocked successfully');
+ // return $id;
+
 
   }
 
@@ -109,11 +112,13 @@ class AnnouncementController extends Controller
   {
     //fetches  all approved requests based on type
       $request =  Announcement::with('user')->where('id',$id)->get();
-      $request =  Tribute::with('user')->where('announcement_id',$id)->get();
+      $tribute =  Tribute::with('user')->where('announcement_id',$id)->get();
 
      $requests = Notification::all();
 
-     return view('client.view-each-announcements',array('requests' => $requests),array('request' =>$request));
+ return view('client.view-each-announcements',['requests' => $requests, 'request' => $request ,'tribute' => $tribute  ]);
+    // return view('client.view-each-announcements',array('tribute' =>$tribute ),array('requests' => $requests),array('request' =>$request));
+
 
   }
 

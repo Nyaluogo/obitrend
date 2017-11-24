@@ -1084,7 +1084,7 @@
         <div class="page-content">
             <!-- BEGIN PAGE HEADER-->
             <!-- BEGIN THEME PANEL -->
-            <div class="theme-panel">
+            <!-- <div class="theme-panel">
                 <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
                     <i class="icon-settings"></i>
                 </div>
@@ -1159,7 +1159,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- END THEME PANEL -->
 
             <div class="page-bar">
@@ -1542,7 +1542,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Description</label>
                                                     <div class="col-md-4">
-                                                        <textarea class="form-control" rows="3" name="description"></textarea>
+                                                        <textarea class="form-control" rows="3" maxlength= "500" name="description"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -1574,7 +1574,7 @@
                                                     </label>
                                                     <div class="col-md-4">
                                                         <input type="text" class="form-control" name="location" />
-                                                        <span class="help-block"> Provide location of the funeral </span>
+                                                        <span class="help-block"> Provide a location  </span>
                                                     </div>
                                                 </div>
 
